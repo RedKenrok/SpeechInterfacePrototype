@@ -1,0 +1,4 @@
+Language information of supported languages by the Google Cloud Platform.
+	see https://cloud.google.com/speech/docs/languages
+Each language code parameter consists of a BCP-47 identifier.
+	see https://tools.ietf.org/html/bcp47
