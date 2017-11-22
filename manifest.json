@@ -17,25 +17,21 @@
 	
 	"icons": [
 		{
-			"src": "icons/16.png",
+			"src": "images/icons/16.png",
 			"type": "image/png",
 			"sizes": "16x16"
   		}, {
-			"src": "icons/32.png",
+			"src": "images/icons/32.png",
 			"type": "image/png",
 			"sizes": "32x32"
   		}, {
-			"src": "icons/64.png",
+			"src": "images/icons/64.png",
 			"type": "image/png",
 			"sizes": "64x64"
   		}, {
-			"src": "icons/128.png",
+			"src": "images/icons/128.png",
 			"type": "image/png",
 			"sizes": "128x128"
-  		}, {
-			"src": "icons/256.png",
-			"type": "image/png",
-			"sizes": "256x256"
   		}
 	],
 	
