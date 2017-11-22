@@ -3,49 +3,66 @@
 	<head>
 		<meta charset="UTF-8"/>
 		
-		<title>Voice</title>
-		<meta name="keywords" content="Voice"/>
-		<meta name="description" content="Speech driven interface design prototype"/>
+		<title>Voice interface prototype</title>
+		<meta name="keywords" content="Voice, driven, interface, design, prototype"/>
+		<meta name="description" content="Voice driven interface design prototype"/>
 		<meta name="author" content="Ron Dekker"/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<!-- Icons -->
-		<link rel="icon" type="image/png" href="icons/16x16.png" sizes="16x16"/>
-		<link rel="icon" type="image/png" href="icons/32x32.png" sizes="32x32"/>
-		<link rel="icon" type="image/png" href="icons/64x64.png" sizes="64x64"/>
-		<link rel="icon" type="image/png" href="icons/128x128.png" sizes="128x128"/>
+		<!-- Icons
+		<link rel="icon" type="image/png" href="images/icons/16.png" sizes="16x16"/>
+		<link rel="icon" type="image/png" href="images/icons/32.png" sizes="32x32"/>
+		<link rel="icon" type="image/png" href="images/icons/64.png" sizes="64x64"/>
+		<link rel="icon" type="image/png" href="images/icons/128.png" sizes="128x128"/>
+		<link rel="icon" type="image/png" href="images/icons/256.png" sizes="256x256"/>
+		 -->
+		
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="styles/normalize.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro:400,700">
+		<link rel="stylesheet" href="styles/project.css">
+		<link rel="stylesheet" href="styles/custom.css">
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+			}
+		</style>
 		
 		<!-- Progressive Web App -->
 		<link rel='manifest' href='manifest.json'>
 		<script async src="serviceWorker.js"></script>
-		
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="sytlesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&amp;subset=latin-ext">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="css/grid-boilerplate.css">
-		<link rel="stylesheet" href="css/custom.css">
 	</head>
 	<body>
-		<div class="grid">
+		<!-- Navigation -->
+		<nav class="navigation">
+			<div class="content">
+				<ul>
+					<li><a title="GitHub" href=""><i class="zmdi zmdi-github"></i></a></li>
+					<li><a title="Messenger" href="#messenger">Messenger</a></li>
+					<li><a title="Languages" href="#languages">Languages</a></li>
+				</ul>
+				<div class="gradient"></div>
+			</div>
+		</nav>
+		<div class="content">
 			<!-- Description -->
-			<div class="row">
-				<section class="cell-12 text">
+			<div>
+				<section>
 					<h1>Voice Controlled Interface Prototype</h1>
 					<p>A simple implentation of a speech interface using the webkit speech API.</p>
 				</section>
 			</div>
-			<div class="row">
+			<div>
 				<!-- Speech interface -->
-				<section class="cell-8" id="speech">
+				<section id="speech">
 					<span class="disableSelection" id="record">
-						<i class="material-icons">mic</i>
+						<i class="zmdi zmdi-mic"></i>
 					</span>
 					<ul id="messenger"></ul>
 				</section>
 				<!-- Language selection -->
-				<section class="cell-4" id="languages">
+				<section id="languages">
 					<input class="search" type="text" name="search" placeholder="Search..">
 					<ul class="disableSelection"></ul>
 				</section>
@@ -54,14 +71,18 @@
 				</section>
 			</div>
 		</div>
-		<!-- Jquery 3.2.1 -->
+		<!-- Additional stylesheets -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+		<!-- Additional scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!-- Custom scripts -->
-		<script src="js/JsonUtil.js"></script>
-		<script src="js/Languages.js"></script>
-		<script src="js/Messenger.js"></script>
-		<script src="js/Processor.js"></script>
-		<script src="js/Recognition.js"></script>
-		<script src="js/Synthesis.js"></script>
+		<script async src="scripts/navigation.js"></script>
+		<!-- Project scripts -->
+		<script src="scripts/project/languages.js"></script>
+		<script src="scripts/project/messenger.js"></script>
+		<script src="scripts/project/processor.js"></script>
+		<script src="scripts/project/recognition.js"></script>
+		<script src="scripts/project/synthesis.js"></script>
+		<!-- Project Libs scripts -->
+		<script src="scripts/project/libs/jsonUtil.js"></script>
 	</body>
 </html>
