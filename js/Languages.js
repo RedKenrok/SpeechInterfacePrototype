@@ -4,9 +4,7 @@ let languages = {
 		name: 'English (Great Britain)',
 		name_en: 'English (United Kingdom)',
 		code: 'en-GB'
-	},
-	// On change event.
-	onchange: []
+	}
 };
 
 (function() {
@@ -71,9 +69,8 @@ let languages = {
 					name_en: selectedElement.attr('data-name_en'),
 					code: selectedElement.attr('data-code')
 				};
-				languages.onchange.forEach(function(event) {
-					event(languages.selected);
-				});
+				// Trigger change event.
+				$('#languages').trigger('change', languages.selected);
 			});
 		});
 	};

@@ -19,17 +19,19 @@ let synthesis = {};
 		
 		// Create and configure base message.
 		message = new SpeechSynthesisUtterance();
+		message.lang = languages.selected.code;
 		// When the message is finished.
 		message.onend = function(event) {
+			// Enable new speech recognition again.
 			recognition.enable();
 		};
-		// When the language is changed.
-		languages.onchange.push(function(language) {
+		// On language change.
+		$('#languages').on('change', function(event, language) {
 			message.lang = language.code;
 		});
 		
 		// On processor end.
-		processor.onend.push(function(transcript) {
+		$('#processor').on('end', function(event, transcript) {
 			message.text = transcript;
 			speechSynthesis.speak(message);
 		});

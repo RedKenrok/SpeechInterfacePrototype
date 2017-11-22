@@ -1,17 +1,12 @@
-let processor = {
-	// On end event.
-	onend: []
-};
+let processor = {};
 
 (function() {
 	'use strict';
 	
 	processor.initialize = function() {
-		// On end of the recognizer.
-		recognition.onend.push(function(transcript) {
-			processor.onend.forEach(function(event) {
-				event(transcript);
-			});
+		// On speech end.
+		$('#speech').on('end', function(event, transcript) {
+			$('#processor').trigger('end', transcript);
 		});
 	};
 }());

@@ -1,9 +1,4 @@
-let recognition = {
-	// On result event.
-	onresult: [],
-	// On end event.
-	onend: []
-};
+let recognition = {};
 
 (function() {
 	'use strict';
@@ -36,9 +31,8 @@ let recognition = {
 		// On end
 		speechRecognition.onend = function() {
 			console.log('recognition end: ' + transcript);
-			recognition.onend.forEach(function(event) {
-				event(transcript);
-			});
+			// Trigger end event.
+			$('#speech').trigger('end', transcript);
 		};
 		// On error
 		speechRecognition.onerror = function(event) {
@@ -69,14 +63,12 @@ let recognition = {
 				}
 			}
 			
-			// Call speech event.
-			recognition.onresult.forEach(function(event) {
-				event(transcript, transcript_interim);
-			});
+			// Trigger result event.
+			$('#speech').trigger('result', transcript, transcript_interim);
 		};
 		
-		// Add language listener.
-		languages.onchange.push(function(language) {
+		// On language change.
+		$('#languages').on('change', function(event, language) {
 			speechRecognition.lang = language.code;
 		});
 		

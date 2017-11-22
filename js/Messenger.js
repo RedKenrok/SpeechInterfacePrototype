@@ -12,8 +12,8 @@ let messenger = {};
 		// Get messenger.
 		let messenger = $('#messenger');
 		
-		// From recognizer.
-		recognition.onresult.push(function(transcript, transcript_interm) {
+		// On speech result.
+		$('#speech').on('result', function(event, transcript, transcript_interm) {
 			if (element === null) {
 				let elementTemp = $($.parseHTML(template));
 				elementTemp.addClass('self');
@@ -27,13 +27,15 @@ let messenger = {};
 				element.append('<span class="interm">' + transcript_interm + '</span>');
 			}
 		});
-		recognition.onend.push(function(transcript) {
+		
+		// On speech end.
+		$('#speech').on('end', function(event, transcript) {
 			element.text(transcript);
 			element = null;
 		});
 		
-		// From processor.
-		processor.onend.push(function(transcript) {
+		// On processor end.
+		$('#processor').on('end', function(event, transcript) {
 			let elementTemp = $($.parseHTML(template));
 			elementTemp.addClass('other');
 			$(elementTemp).find('div').text(transcript);
