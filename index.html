@@ -18,8 +18,9 @@
 		
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="styles/normalize.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro:400,700">
-		<link rel="stylesheet" href="styles/project.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro">
+		<link rel="stylesheet" href="styles/flexboxgrid2.min.css">		
+		<link rel="stylesheet" href="styles/space.css">
 		<link rel="stylesheet" href="styles/custom.css">
 		<style>
 			body {
@@ -37,37 +38,43 @@
 			<div class="content">
 				<ul>
 					<li><a title="GitHub" href=""><i class="zmdi zmdi-github"></i></a></li>
+					<li><a title="About" href="#about">About</a></li>
 					<li><a title="Messenger" href="#messenger">Messenger</a></li>
 					<li><a title="Languages" href="#languages">Languages</a></li>
 				</ul>
 				<div class="gradient"></div>
 			</div>
 		</nav>
-		<div class="content">
+		<div class="container">
 			<!-- Description -->
-			<div>
-				<section>
+			<div class="row middle-xs" id="about">
+				<div class="col-xs-12">
 					<h1>Voice Controlled Interface Prototype</h1>
 					<p>A simple implentation of a speech interface using the webkit speech API.</p>
-				</section>
+				</div>
 			</div>
-			<div>
+			<div class="row top-xs">
+				<!-- Processor selection -->
+				<div id="processor" hide></div>
 				<!-- Speech interface -->
-				<section id="speech">
-					<span class="disableSelection" id="record">
-						<i class="zmdi zmdi-mic"></i>
-					</span>
-					<ul id="messenger"></ul>
-				</section>
+				<div class="col-xs-12 col-md-8" id="speech">
+					<div class="content">
+						<span class="disableSelection" id="record">
+							<i class="zmdi zmdi-mic"></i>
+						</span>
+						<ul id="messenger"></ul>
+					</div>
+				</div>
 				<!-- Language selection -->
-				<section id="languages">
+				<div class="col-xs-12 col-md-4" id="languages">
 					<input class="search" type="text" name="search" placeholder="Search..">
 					<ul class="disableSelection"></ul>
-				</section>
-				<!-- Processor selection -->
-				<section id="processor">
-				</section>
+				</div>
 			</div>
+			<!-- Footer -->
+			<footer>
+				<a href="/humans.txt" target="_blank">humans.txt</a>
+			</footer>
 		</div>
 		<!-- Additional stylesheets -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
