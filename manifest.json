@@ -1,5 +1,4 @@
 {
-	"url": "",
 	"start_url": "index.html",
 	
 	"name": "Voice interface prototype",
@@ -33,12 +32,5 @@
 			"type": "image/png",
 			"sizes": "128x128"
   		}
-	],
-	
-	"prefer_related_applications": false,
-	"related_applications": [
-		{
-			"platform": "web"
-		}
 	]
 }
