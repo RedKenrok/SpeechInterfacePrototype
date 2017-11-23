@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="UTF-8"/>
+		<link rel="alternate" hreflang="en" href="https://voice.rondekker.nl"/>
 		
 		<title>Voice interface prototype</title>
 		<meta name="keywords" content="Voice, driven, interface, design, prototype"/>
@@ -17,7 +18,7 @@
 		<link rel="icon" type="image/png" href="images/icons/128.png" sizes="128x128"/>
 		
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="styles/normalize.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro">
 		<link rel="stylesheet" href="styles/flexboxgrid2.min.css">		
 		<link rel="stylesheet" href="styles/space.css">
@@ -30,7 +31,20 @@
 		
 		<!-- Progressive Web App -->
 		<link rel='manifest' href='manifest.json'>
-		<script async src="serviceWorker.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				// Register service worker.
+				navigator.serviceWorker
+					.register('serviceWorker.js', { scope: '/' })
+					.then(
+						function(registration) {
+							console.log('ServiceWorker registration successful with scope: ', registration.scope);
+						},
+						function(error) {
+							console.log('ServiceWorker registration failed: ', error);
+						});
+			}
+		</script>
 	</head>
 	<body>
 		<!-- Navigation -->
